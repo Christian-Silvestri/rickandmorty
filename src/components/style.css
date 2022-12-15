@@ -1,0 +1,8 @@
+.card {
+  border: 1px solid var(--light-green);
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px var(--dark-green);
+  height: 480px;
+  width: 300px;
+
+}

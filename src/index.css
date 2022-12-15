@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "rickmorty";
+  src: url("../public/font/get_schwifty.ttf");
+  font-family: 'coda';
+  src: url('../public/font/Coda-Regular.ttf');
+  font-family: 'hubballi';
+  src: url('../public/font/Hubballi-Regular.ttf');
+  font-family: 'magra';
+  src: url('../public/font/Magra-Regular.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --color-1: #22A2BD;
+  --dark-green: #61CB3D;
+  --light-green: #98f630;
+  
 }
+
+* {
+ 
+  box-sizing: border-box;
+}
+
+html {
+  color: rgb(209 213 219);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.logo {
+  font-family: 'rickmorty';
+  color: var(--color-1);
+  text-shadow: 5px 5px 1px var(--light-green);
+  font-size: 200px;
+}
+

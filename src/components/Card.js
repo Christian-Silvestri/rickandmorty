@@ -3,8 +3,25 @@ import { useState, useEffect } from "react";
 import './style.css';
 
 
-const Card = ({ results }) => {
+//CARD SIZE
+//width: 300px
+//height: 480px
+/////////////////////
+/////////////////////
+//---CARD-AVATAR---//
+//---height: 55% --> CARD-SIZE = 264px
+///////////////////////////////////////
+//---CARD-BODY---//
+//---height: 45% --> CARD-SIZE = 216px
+//
+//-----TITLE
+//-----height: 40% --> CARD-BODY = 86.4px
+//-----DESCRIPTION
+//-----height: 60% --> CARD-BODY = 129.6px
+//////////////////////////////////////////
 
+
+const Card = ({ results }) => {
 
   return (
     <>
@@ -13,56 +30,17 @@ const Card = ({ results }) => {
           results.map((character, index) => {
 
             //Destructuring character variable
-            const { name, gender, species, status, origin, location, image } = character;
-
-
-
-
-            //to maintain consistency between the cards change the style of the longer strings
-            const _origin = origin.name
-              .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
-              .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's Dim.)`)
-              .replace('Earth (Giant Telepathic Spiders Dimension)', 'Earth (Telepathic Spiders)')
-              .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet');
-
-            const _location = location.name
-              .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
-              .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's Dim.)`)
-              .replace('Testicle Monster Dimension', 'Testicle Monster Dim.')
-              .replace('Galactic Federation Prison', 'Galactic Fed. Prison')
-              .replace('Interdimensional Customs', 'Interdim. Customs')
-              .replace('Earth (Giant Telepathic Spiders Dimension)', 'Earth (Telepathic Spiders)')
-              .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet');
-
-            const shortName = name.length >= 20 && 'text-xxl';
+            let { name, gender, species, status, origin, location, image } = character;
 
             //CARD COMPONENT
             return (
-              <div key={index} className="card flex flex-col text-gray-300">
-                <div className="avatar h-[55%] ">
-                  <img src={image} alt={name} className='h-full w-full rounded-tl-[10px] rounded-tr-[10px]' />
+              <div key={index} className="card flex flex-col relative">
+                <CardAvatar image={image} name={name} />
+                <div className="card-body h-[45%] px-4">
+                  <CartTitle name={name} />
+                  <CardDescription gender={gender} species={species} origin={origin} location={location} />
                 </div>
-                <div className="card-body h-[45%]">
-                  <div className="card-title h-[40%] flex items-center justify-center">
-                    <h3 className={`text-3xl uppercase font-magra text-rick_blue text-center ${shortName}`}>
-                      {name}
-                    </h3>
-                  </div>
-                  <div className="card-description h-[60%] px-2 flex flex-col justify-start text-lg">
-                    <h5>
-                      Gender: <span>{gender}</span>
-                    </h5>
-                    <h5>
-                      Species: <span>{species}</span>
-                    </h5>
-                    <h5>
-                      Origin: <span>{_origin}</span>
-                    </h5>
-                    <h5>
-                      Location: <span>{_location}</span>
-                    </h5>
-                  </div>
-                </div>
+                <CardBadge status={status} />
               </div>
             )
           })
@@ -73,10 +51,117 @@ const Card = ({ results }) => {
 }
 
 
+const CardDescription = ({ gender, species, origin, location }) => {
+
+  //to maintain consistency between the cards change the length of the longer strings
+  origin = origin.name
+    .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
+    .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's Dim.)`)
+    .replace('Earth (Giant Telepathic Spiders Dimension)', 'Earth (Telepathic Spiders)')
+    .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet');
+
+  location = location.name
+    .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
+    .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's Dim.)`)
+    .replace('Testicle Monster Dimension', 'Testicle Monster Dim.')
+    .replace('Galactic Federation Prison', 'Galactic Fed. Prison')
+    .replace('Interdimensional Customs', 'Interdim. Customs')
+    .replace('Earth (Giant Telepathic Spiders Dimension)', 'Earth (Telepathic Spiders)')
+    .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet');
+
+
+  return (
+    <div className="h-[60%] flex flex-col justify-start text-lg">
+
+      <h5>
+        <span className="font-bold uppercase">Gender - </span>
+        <span className={`
+        ${gender === 'unknown' && 'text-gray-400/70'}`}
+        >
+          {gender}
+        </span>
+      </h5>
+
+      <h5>
+        <span className="font-bold uppercase">Species - </span>
+        <span className={`
+        ${species === 'unknown' && 'text-gray-400/70'}`}
+        >
+          {species}
+        </span>
+      </h5>
+
+      <h5>
+        <span className="font-bold uppercase">Origin - </span>
+        <span className={`
+        ${origin.name === 'unknown' && 'text-gray-400/70'}`}
+        >
+          {origin}
+        </span>
+      </h5>
+
+      <h5>
+        <span className="font-bold uppercase">Location - </span>
+        <span className={`
+        ${location.name === 'unknown' && 'text-gray-400/70'}`}
+        >
+          {location}
+        </span>
+      </h5>
+      
+    </div>
+  )
+}
 
 
 
+const CartTitle = ({ name }) => {
 
+
+
+  return (
+    <div className="h-[40%] flex items-center justify-center">
+      <h3
+        className={`t-shadow  font-bold uppercase text-rick_blue text-center
+        ${name.length >= 25 ? 'text-xl' : 'text-3xl'}`}
+      >
+        {name}
+      </h3>
+    </div>
+  )
+}
+
+
+const CardBadge = ({ status }) => {
+
+  //Set the color of the badge text according to the current state
+  //status = Alive -> green
+  //status = Dead -> red
+  //status = unknokwn -> gray
+  const statusBadge = status === 'Alive' ?
+    'text-green-500' :
+    status === 'Dead' ?
+      'text-red-500' :
+      'text-gray-400/70 font-light lowercase'
+
+
+  return (
+    <div className={`${statusBadge} absolute right-4 top-1 text-lg font-black uppercase `}>
+      {status}
+    </div>
+  )
+}
+
+
+
+const CardAvatar = ({ image, name }) => {
+
+  return (
+    <div className="avatar h-[55%] px-4 pt-4 flex items-center justify-center">
+      <img src={image} alt={name} className={`w-5/6 rounded-full`} />
+    </div>
+  )
+}
 
 
 

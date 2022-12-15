@@ -6,10 +6,19 @@
 @font-face {
   font-family: "rickmorty";
   src: url("../public/font/get_schwifty.ttf");
+}
+
+@font-face {
   font-family: 'coda';
   src: url('../public/font/Coda-Regular.ttf');
+}
+
+@font-face {
   font-family: 'hubballi';
   src: url('../public/font/Hubballi-Regular.ttf');
+}
+
+@font-face {
   font-family: 'magra';
   src: url('../public/font/Magra-Regular.ttf');
 }

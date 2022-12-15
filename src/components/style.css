@@ -1,8 +1,29 @@
 .card {
   border: 1px solid var(--light-green);
   border-radius: 10px;
-  box-shadow: 3px 3px 8px var(--dark-green);
+  box-shadow: 1px 1px 8px var(--dark-green);
   height: 480px;
   width: 300px;
+  transition: all 0.2s linear;
+  color: rgb(209 213 219);
+  background-color: rgb(39 39 42);
+  font-family: 'magra';
+}
 
+span+span {
+  font-size: 1rem
+}
+
+@media (min-width: 1280px) {
+  .card:hover {
+    transform: scale(1.2) rotateY(5deg);
+    z-index: 10;
+    border: #88fc04 4px solid;
+    box-shadow: none;
+  }
+
+  .card:hover .t-shadow {
+    text-shadow: 1px 1px 2px var(--light-green),
+      -1px -1px 2px black;
+  }
 }

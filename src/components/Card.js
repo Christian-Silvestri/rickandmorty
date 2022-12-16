@@ -53,62 +53,54 @@ const Card = ({ results }) => {
 
 const CardDescription = ({ gender, species, origin, location }) => {
 
+
   //to maintain consistency between the cards change the length of the longer strings
   origin = origin.name
-    .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
-    .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's Dim.)`)
+    .replace('Earth (Replacement Dimension)', 'Earth (Repl. dim.)')
+    .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's dim.)`)
     .replace('Earth (Giant Telepathic Spiders Dimension)', 'Earth (Telepathic Spiders)')
-    .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet');
+    .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet')
+    .replace('Earth (Unknown dimension)', 'Earth (Unknown dim.)')
+    .replace(`Birdperson's Consciousness`, `Birdperson's Consc.`)
+    .replace(`Tickets Please Guy Nightmare`, `Tickets Please Guy Night.`);
 
   location = location.name
     .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
-    .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's Dim.)`)
-    .replace('Testicle Monster Dimension', 'Testicle Monster Dim.')
+    .replace(`Earth (Evil Rick's Target Dimension)`, `Earth (Evil Rick's dim.)`)
+    .replace('Testicle Monster Dimension', 'Testicle Monster dim.')
     .replace('Galactic Federation Prison', 'Galactic Fed. Prison')
     .replace('Interdimensional Customs', 'Interdim. Customs')
     .replace('Earth (Giant Telepathic Spiders Dimension)', 'Earth (Telepathic Spiders)')
-    .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet');
+    .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet')
+    .replace('Earth (Unknown dimension)', 'Earth (Unknown dim.)')
+    .replace(`Birdperson's Consciousness`, `Birdperson's Consc.`)
+    .replace(`Tickets Please Guy Nightmare`, `Tickets Please Guy Night.`);
+
+
+  const list = [
+    { "Gender": gender },
+    { "Species": species },
+    { "Origin": origin },
+    { "Location": location }
+  ]
 
 
   return (
     <div className="h-[60%] flex flex-col justify-start text-lg">
 
-      <h5>
-        <span className="font-bold uppercase">Gender - </span>
-        <span className={`
-        ${gender === 'unknown' && 'text-gray-400/70'}`}
-        >
-          {gender}
-        </span>
-      </h5>
+      {list.map((itemList, index) => {
+        return (
+          <h5 key={index}>
+            <span className="font-bold uppercase">
+              {`${Object.keys(itemList)} -`}
+            </span>
+            <span className={`${Object.values(itemList).includes('unknown') && 'text-gray-400/70'}`}>
+              {Object.values(itemList)}
+            </span>
+          </h5>
+        )
+      })}
 
-      <h5>
-        <span className="font-bold uppercase">Species - </span>
-        <span className={`
-        ${species === 'unknown' && 'text-gray-400/70'}`}
-        >
-          {species}
-        </span>
-      </h5>
-
-      <h5>
-        <span className="font-bold uppercase">Origin - </span>
-        <span className={`
-        ${origin.name === 'unknown' && 'text-gray-400/70'}`}
-        >
-          {origin}
-        </span>
-      </h5>
-
-      <h5>
-        <span className="font-bold uppercase">Location - </span>
-        <span className={`
-        ${location.name === 'unknown' && 'text-gray-400/70'}`}
-        >
-          {location}
-        </span>
-      </h5>
-      
     </div>
   )
 }

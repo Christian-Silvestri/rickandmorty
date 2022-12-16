@@ -5,7 +5,7 @@ function App() {
 
 
   return (
-    <div className="App bg-zinc-800 ">
+    <div className="App bg-zinc-800 h-full ">
       <div className="">
         <Characters />
 

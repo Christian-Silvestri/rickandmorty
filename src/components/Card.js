@@ -25,7 +25,7 @@ const Card = ({ results }) => {
 
   return (
     <>
-      {results &&
+      {results ?
         (
           results.map((character, index) => {
 
@@ -44,7 +44,7 @@ const Card = ({ results }) => {
               </div>
             )
           })
-        )
+        ) : <h1 className="">No characters found</h1>
       }
     </>
   )
@@ -62,7 +62,8 @@ const CardDescription = ({ gender, species, origin, location }) => {
     .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet')
     .replace('Earth (Unknown dimension)', 'Earth (Unknown dim.)')
     .replace(`Birdperson's Consciousness`, `Birdperson's Consc.`)
-    .replace(`Tickets Please Guy Nightmare`, `Tickets Please Guy Night.`);
+    .replace(`Tickets Please Guy Nightmare`, `Tickets Please Guy Night.`)
+    .replace('Earth (Fascist Teddy Bear Dimension)', 'Earth (Fascist Dimension)');
 
   location = location.name
     .replace('Earth (Replacement Dimension)', 'Earth (Repl. Dim.)')
@@ -74,7 +75,9 @@ const CardDescription = ({ gender, species, origin, location }) => {
     .replace('Rick and Two Crows Planet', 'Rick & Two Crows Planet')
     .replace('Earth (Unknown dimension)', 'Earth (Unknown dim.)')
     .replace(`Birdperson's Consciousness`, `Birdperson's Consc.`)
-    .replace(`Tickets Please Guy Nightmare`, `Tickets Please Guy Night.`);
+    .replace(`Tickets Please Guy Nightmare`, `Tickets Please Guy Night.`)
+    .replace(`Non-Diegetic Alternative Reality`, `Non-Diegetic Reality`)
+    .replace('Earth (Fascist Teddy Bear Dimension)', 'Earth (Fascist Dimension)');;
 
 
   const list = [

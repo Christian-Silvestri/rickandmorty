@@ -25,7 +25,7 @@ const Characters = () => {
         <Card results={results} />
       </div>
       <div className='pt-4 md:'>
-        <Pagination setPageNumber={setPageNumber} pageNumber={pageNumber} info={info} />
+        <Pagination results={results} setPageNumber={setPageNumber} pageNumber={pageNumber} info={info} />
       </div>
     </div>
 

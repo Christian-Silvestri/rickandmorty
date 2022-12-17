@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import useUpdateWidth from '../utils/useUpdateWidth';
 import { motion } from 'framer-motion';
-import Button from '../utils/Button';
+import Button from './Button';
 
 const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
   const width = useUpdateWidth();
@@ -12,7 +12,7 @@ const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
     setPageNumber(data.selected + 1)
   }
 
-  /////--(maximum characters displayed per page)--\\\\
+  /////--(maximum characters displayed per page = 20)--\\\\
   ///////////////////////////////////////////////
   ///////////////////////////////////////////////
   /////--NEXT BUTTON becomes Display hidden when:
@@ -32,18 +32,21 @@ const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
   ///////////////////////////PAGINATION COMPONENT FOR MOBILE, TABLET VIEWPORT
   return (
     <>
-      <div className='lg:hidden'>
+      <div className='lg:hidden '>
         <ReactPaginate
           nextLabel=
           {
             <Button
               value='next'
+              color='bg-rick_blue'
               className={`${pageNumber === info?.pages || !results || info?.count < 21 ? 'hidden' : ''} px-8 w-screen`}
             />
           }
           previousLabel=
           {
-            <Button value='back'
+            <Button
+              value='back'
+              color='bg-rick_blue'
               className={`${pageNumber === 1 ? 'hidden' : !results ? 'hidden' : null} px-8 w-screen`}
             />
           }
@@ -81,15 +84,29 @@ const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
 
 
 
-      
+
       {/* //////////////////////////////////////////////////////////////////// */}
       {/* ///////////////////////////PAGINATION COMPONENT FOR DESKTOP VIEWPORT */}
       <div className='hidden lg:block'>
         <ReactPaginate
+          nextLabel=
+          {
+            <Button
+              value='next'
+              color='bg-rick_blue'
+              className={`${pageNumber === info?.pages || !results || info?.count < 21 ? 'hidden' : ''} px-8`}
+            />
+          }
+          previousLabel=
+          {
+            <Button
+              value='back'
+              color='bg-rick_blue'
+              className={`${pageNumber === 1 ? 'hidden' : !results ? 'hidden' : null} px-8`}
+            />
+          }
           className='flex justify-center gap-5 items-center font-magra font-bold  '
           forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
-          nextLabel={<Button value='next' className={`${pageNumber === info?.pages || !results || info?.count < 21 ? 'hidden' : ''} px-8`} />}
-          previousLabel={<Button value='back' className={`${pageNumber === 1 ? 'hidden' : !results ? 'hidden' : null} px-8`} />}
           pageCount={info?.pages}
           onPageChange={handlePageChange}
           breakClassName={''}

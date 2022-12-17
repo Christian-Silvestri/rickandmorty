@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import useUpdateWidth from '../utils/useUpdateWidth';
-import Button from '../utils/Button';
+import Button from './Button';
 
 const Search = ({ setSearch, setPageNumber }) => {
   const [value, setValue] = useState('')
@@ -51,7 +51,7 @@ const Search = ({ setSearch, setPageNumber }) => {
         className='btn-search font-bold rounded-md py-2 sm:px-10 border-2 border-white'>
         Clear
       </motion.button> */}
-      <Button value='clear' onClick={handleClear} />
+      <Button value='clear' color='bg-rick_blue' onClick={handleClear} />
     </form>
   )
 }

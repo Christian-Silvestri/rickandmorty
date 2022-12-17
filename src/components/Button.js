@@ -1,6 +1,6 @@
 import React from 'react'
 import {motion} from 'framer-motion';
-import useUpdateWidth from './useUpdateWidth';
+import useUpdateWidth from '../utils/useUpdateWidth';
 
 const Button = (props) => {
   const width = useUpdateWidth();
@@ -19,7 +19,7 @@ const Button = (props) => {
   return (
     <motion.button 
     type='button'
-    className={`${props.className} text-2xl font-bold rounded-md py-2 sm:px-10 border-2 border-white uppercase bg-rick_blue`}
+    className={`${props.className} ${props.color} text-2xl font-bold rounded-md py-2 sm:px-10 border-2 border-white uppercase`}
     onClick={props?.onClick}
     whileHover={'animate'}
     variants={width > 1024 && animationButton}

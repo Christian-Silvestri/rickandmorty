@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { useLocation } from 'react-router-dom';
+import { useLocation, BrowserRouter } from 'react-router-dom';
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -14,9 +14,11 @@ const Wrapper = ({ children }) => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Wrapper>
-    <App />
-  </Wrapper>);
+  <BrowserRouter>
+    <Wrapper>
+      <App />
+    </Wrapper>
+  </BrowserRouter>);
 
 
 

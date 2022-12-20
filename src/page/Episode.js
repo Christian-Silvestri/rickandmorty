@@ -25,7 +25,8 @@ const Episode = () => {
         return fetch(item).then((res) => res.json());
       }))
       setCharacters(epiChar)
-    })()
+    })();
+    window.scrollTo(0, 0)
   }, [id])
 
 
@@ -56,7 +57,7 @@ const Episode = () => {
       </div>
       <div className='xl:flex w-full xl:px-24'>
         <div className='text-center pb-4 px-4 md:px-12  xl:w-[10&] xl:fixed'>
-          <InputGroup setId={setId} totalEpisode={totalEpisode} />
+          <InputGroup label={'Episode'} setId={setId} totalEpisode={totalEpisode} />
         </div>
         <div className='flex flex-wrap xl:pl-96 px-8'>
           <Card results={characters} />

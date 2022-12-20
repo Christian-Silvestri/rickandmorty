@@ -1,6 +1,6 @@
 
 
-const InputGroup = ({ setId, totalEpisode }) => {
+const InputGroup = ({ setId, totalEpisode, label }) => {
   const listEpisode = [...Array(totalEpisode).keys()];
   const handleEpisode = (e) => {
     setId(e.target.value);
@@ -11,7 +11,7 @@ const InputGroup = ({ setId, totalEpisode }) => {
       {listEpisode.map((item, index) => {
         return (
           <option key={index} value={item + 1} >
-            Episode-{item + 1}
+            {label}-{item + 1}
           </option>
         )
       })}

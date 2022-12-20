@@ -2,6 +2,7 @@
 
 import Characters from "./page/Characters";
 import Episode from "./page/Episode";
+import Locations from "./page/Locations";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
      
           {/* <Characters /> */}
              
-        <Episode />
+        {/* <Episode /> */}
+        <Locations />
       </div>
     </div>
   );

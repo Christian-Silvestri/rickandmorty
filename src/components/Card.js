@@ -25,7 +25,7 @@ const Card = ({ results }) => {
 
   return (
     <div className="flex gap-5 justify-center flex-wrap">
-      {results ?
+      {results?.length ?
         (
           results.map((character, index) => {
 
@@ -44,7 +44,7 @@ const Card = ({ results }) => {
               </div>
             )
           })
-        ) : <h1 className="">No characters found</h1>
+        ) : <h1 className="h-screen uppercase text-4xl">No characters found</h1>
       }
     </div>
   )

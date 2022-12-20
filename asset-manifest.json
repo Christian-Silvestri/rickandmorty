@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/rickandmorty/static/css/main.1a545044.css",
+    "main.js": "/rickandmorty/static/js/main.5385e132.js",
+    "static/media/Hubballi-Regular.ttf": "/rickandmorty/static/media/Hubballi-Regular.dbac69cf08b955d4c2a4.ttf",
+    "static/media/Coda-Regular.ttf": "/rickandmorty/static/media/Coda-Regular.05aabe256be008921463.ttf",
+    "static/media/Magra-Regular.ttf": "/rickandmorty/static/media/Magra-Regular.d93136e2789be37d3ea1.ttf",
+    "static/media/get_schwifty.ttf": "/rickandmorty/static/media/get_schwifty.c3d1dfc692e3547fed16.ttf",
+    "index.html": "/rickandmorty/index.html",
+    "main.1a545044.css.map": "/rickandmorty/static/css/main.1a545044.css.map",
+    "main.5385e132.js.map": "/rickandmorty/static/js/main.5385e132.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a545044.css",
+    "static/js/main.5385e132.js"
+  ]
+}

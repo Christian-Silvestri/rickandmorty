@@ -12,7 +12,7 @@ const Wrapper = ({ children }) => {
   return children;
 };
 
-const ScrollToTop = (props) => {
+export const ScrollToTop = (props) => {
   const location = useLocation();
   useEffect(() => {
     if (!location.hash) {
@@ -27,9 +27,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ScrollToTop>
+      <ScrollToTop />
         <App />
-      </ScrollToTop>
+      
     </BrowserRouter>
   </React.StrictMode>);
 

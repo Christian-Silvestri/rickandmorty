@@ -1,25 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+
 import FilterBtn from './FilterBtn'
 import useOutsideClick from '../../utils/useOutsideClick';
-import Button from '../Button';
 
-const FilterValue = ({ setPageNumber, label, filterList, filterState}, props) => {
+
+const FilterValue = ({ setPageNumber, label, filterList, filterState }, props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
     setIsOpen(!isOpen)
-
   }
-
-  
 
   const ref = useOutsideClick(handleOpen);
 
   return (
-    <div className='w-full font-magra '>
+    <div  className='w-full font-magra '>
       <div className='text-center '>
         <button
+        
           type='button'
           onClick={handleOpen}
           className={`${isOpen ? 'bg-amber-400' : 'bg-rick_darkGreenh'} 
@@ -34,6 +32,7 @@ const FilterValue = ({ setPageNumber, label, filterList, filterState}, props) =>
           className='bg-zinc-80 z-10 flex  flex-wrap justify-between w-full absolute top-16 left-0'>
           {filterList.map((items, index) => (
             <FilterBtn
+            
               key={index}
               setPageNumber={setPageNumber}
               filterState={filterState}

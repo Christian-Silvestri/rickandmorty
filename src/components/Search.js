@@ -36,13 +36,13 @@ const Search = ({ setSearch, setPageNumber }) => {
   } */
 
   return (
-    <form className='flex flex-col sm:flex-row sm:items-center sm:justify-center text-2xl font-magra gap-2'>
+    <form className='flex flex-col sm:flex-row xl:flex-col sm:items-center sm:justify-center text-2xl font-magra gap-2'>
       <input
         type='text'
         value={value}
         onChange={handleSeaarch}
         placeholder='Search characters...'
-        className='rounded-md py-2 px-4 sm:w-full ' />
+        className='rounded-md py-2 px-4  sm:w-full ' />
       {/* <motion.button
         whileHover={'animate'}
         variants={width > 1024 && animationButton}
@@ -51,7 +51,7 @@ const Search = ({ setSearch, setPageNumber }) => {
         className='btn-search font-bold rounded-md py-2 sm:px-10 border-2 border-white'>
         Clear
       </motion.button> */}
-      <Button value='clear' color='bg-rick_blue' onClick={handleClear} />
+      <Button value='clear' className='w-full' color='bg-rick_blue' onClick={handleClear} />
     </form>
   )
 }

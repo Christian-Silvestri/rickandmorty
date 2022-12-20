@@ -11,9 +11,9 @@ function App() {
     <div className="App bg-zinc-800 h-full ">
       <div className="">
      
-          <Characters />
+          {/* <Characters /> */}
              
-        {/* <Episode /> */}
+        <Episode />
       </div>
     </div>
   );

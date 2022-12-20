@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -12,13 +12,26 @@ const Wrapper = ({ children }) => {
   return children;
 };
 
+const ScrollToTop = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return <>{props.children}</>
+};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Wrapper>
-      <App />
-    </Wrapper>
-  </BrowserRouter>);
+  <React.StrictMode>
+    <BrowserRouter>
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
+    </BrowserRouter>
+  </React.StrictMode>);
 
 
 

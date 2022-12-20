@@ -4,7 +4,7 @@ import FilterBtn from './FilterBtn'
 import useOutsideClick from '../../utils/useOutsideClick';
 import Button from '../Button';
 
-const FilterValue = ({ setPageNumber, label, filterList, filterState}) => {
+const FilterValue = ({ setPageNumber, label, filterList, filterState}, props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -12,10 +12,12 @@ const FilterValue = ({ setPageNumber, label, filterList, filterState}) => {
 
   }
 
+  
+
   const ref = useOutsideClick(handleOpen);
 
   return (
-    <div className='w-full font-magra'>
+    <div className='w-full font-magra '>
       <div className='text-center '>
         <button
           type='button'
@@ -29,7 +31,7 @@ const FilterValue = ({ setPageNumber, label, filterList, filterState}) => {
         <div
           ref={ref}
           onClick={() => setIsOpen(!isOpen)}
-          className='bg-zinc-800 z-10 flex w-screen flex-wrap justify-between  gap-4 absolute top-16 left-0'>
+          className='bg-zinc-80 z-10 flex  flex-wrap justify-between w-full absolute top-16 left-0'>
           {filterList.map((items, index) => (
             <FilterBtn
               key={index}

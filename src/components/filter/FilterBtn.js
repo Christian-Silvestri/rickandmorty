@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FilterBtn = ({ setPageNumber, items,filterState }) => {
+const FilterBtn = ({ setPageNumber, items, filterState }) => {
 
   const handleFilter = () => {
     filterState(items)
@@ -9,9 +9,11 @@ const FilterBtn = ({ setPageNumber, items,filterState }) => {
   }
 
   return (
-    <button onClick={handleFilter} className='border px-4 rounded-md bg-zinc-800 py-2'>
-      {items}
-    </button>
+    
+      <button onClick={handleFilter} className='border w-1/2  border-amber-400 uppercase text-sm px-8 rounded-md bg-zinc-800 py-2'>
+        {items}
+      </button>
+    
   )
 }
 

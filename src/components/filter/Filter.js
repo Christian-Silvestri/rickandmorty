@@ -29,16 +29,17 @@ const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
   }
   return (
     <div className='font-magra uppercase'>
+      <div>
+        <Button value='reset' color='bg-rick_darkGreen' onClick={handleClearFilter} className='w-full' />
+
+      </div>
       <div className='flex justify-center gap-x-2 w-full relative pt-2'>
         <FilterValue setPageNumber={setPageNumber} filterState={setStatus} filterList={status} label={'status'} />
         <FilterValue setPageNumber={setPageNumber} filterState={setGender} filterList={gender} label={'gender'} />
         <FilterValue setPageNumber={setPageNumber} filterState={setSpecies} filterList={species} label={'species'} />
       </div>
-      <div>
-        <Button value='reset' color='bg-rick_darkGreen' onClick={handleClearFilter} className='w-full' />
 
-      </div>
-      
+
     </div>
 
   )

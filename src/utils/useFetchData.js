@@ -8,11 +8,13 @@ function useFetchData(Endpoint) {
   const base_url = `https://rickandmortyapi.com/api${Endpoint}`;
 
   useEffect(() => {
+    
     (async function () {
       const response = await fetch(base_url)
         .then((res) => res.json())
       setData(response);
     })();
+    window.scrollTo(0, 0)
   }, [base_url])
 
   return {

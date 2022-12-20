@@ -1,15 +1,15 @@
 import React from 'react'
 
-const FilterBtn = ({ setPageNumber, setStatus, items, name, index }) => {
+const FilterBtn = ({ setPageNumber, items,filterState }) => {
 
   const handleFilter = () => {
-    setStatus(items)
+    filterState(items)
     setPageNumber(1)
 
   }
 
   return (
-    <button onClick={handleFilter} className='border px-2'>
+    <button onClick={handleFilter} className='border px-4 rounded-md bg-zinc-800 py-2'>
       {items}
     </button>
   )

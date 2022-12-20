@@ -36,7 +36,7 @@ const Search = ({ setSearch, setPageNumber }) => {
   } */
 
   return (
-    <form className='flex flex-col sm:flex-row sm:items-center sm:justify-center text-2xl font-magra gap-2 px-8 py-8'>
+    <form className='flex flex-col sm:flex-row sm:items-center sm:justify-center text-2xl font-magra gap-2'>
       <input
         type='text'
         value={value}

@@ -78,7 +78,7 @@ const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
           previousLinkClassName=''
           activeClassName={'font-bold text-rick_lightGreen text-4xl flex   '}
           marginPagesDisplayed={pageNumber === 38 || pageNumber === 5 ? 1 : 2}
-          pageRangeDisplayed={2}
+          pageRangeDisplayed={1}
         />
       </div>
 

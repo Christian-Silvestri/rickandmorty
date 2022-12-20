@@ -24,7 +24,7 @@ import './style.css';
 const Card = ({ results }) => {
 
   return (
-    <>
+    <div className="flex gap-5 justify-center flex-wrap">
       {results ?
         (
           results.map((character, index) => {
@@ -46,7 +46,7 @@ const Card = ({ results }) => {
           })
         ) : <h1 className="">No characters found</h1>
       }
-    </>
+    </div>
   )
 }
 

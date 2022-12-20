@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import FilterBtn from './FilterBtn'
 import useOutsideClick from '../../utils/useOutsideClick';
 
-const Status = ({ setStatus, setPageNumber }) => {
+const Status = ({ setStatus, setPageNumber, filterState }) => {
   const [isOpen, setIsOpen] = useState(false);
   const status = ['Alive', 'Dead', 'Unknown']
 
@@ -27,7 +27,7 @@ const Status = ({ setStatus, setPageNumber }) => {
               key={index}
               name='status'
               setPageNumber={setPageNumber}
-              setStatus={setStatus}
+              filterState={setStatus}
               items={items}
             />
           )

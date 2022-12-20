@@ -32,14 +32,14 @@ const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
   ///////////////////////////PAGINATION COMPONENT FOR MOBILE, TABLET VIEWPORT
   return (
     <>
-      <div className='lg:hidden '>
+      <div className='lg:hidden  '>
         <ReactPaginate
           nextLabel=
           {
             <Button
               value='next'
               color='bg-rick_blue'
-              className={`${pageNumber === info?.pages || !results || info?.count < 21 ? 'hidden' : ''} px-8 w-screen`}
+              className={`${pageNumber === info?.pages || !results || info?.count < 21 ? 'hidden' : ''} px-8 min-w-[350px]`}
             />
           }
           previousLabel=
@@ -47,11 +47,11 @@ const Pagination = ({ setPageNumber, pageNumber, info, results }) => {
             <Button
               value='back'
               color='bg-rick_blue'
-              className={`${pageNumber === 1 ? 'hidden' : !results ? 'hidden' : null} px-8 w-screen`}
+              className={`${pageNumber === 1 ? 'hidden' : !results ? 'hidden' : null} px-8 min-w-[350px]`}
             />
           }
 
-          className='flex flex-col justify-center gap-5 items-center font-magra font-bold  '
+          className='flex flex-col justify-center gap-5 items-center font-magra font-bold   '
           forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
           pageCount={info?.pages}
           onPageChange={handlePageChange}

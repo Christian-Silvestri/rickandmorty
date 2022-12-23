@@ -30,7 +30,7 @@ const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
   return (
     <div className='font-magra uppercase'>
       <div>
-        <Button value='reset' color='bg-rick_darkGreen' onClick={handleClearFilter} className='w-full' />
+        <Button value='reset' color='' border='border-rick_lightGreen' onClick={handleClearFilter} className='w-full' />
       </div>
       <div className='flex justify-center  gap-x-2 w-full relative pt-2'>
         <FilterValue setPageNumber={setPageNumber} filterState={setStatus} filterList={status} label={'status'} />
@@ -40,5 +40,7 @@ const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
     </div>
   )
 }
+
+
 
 export default Filter

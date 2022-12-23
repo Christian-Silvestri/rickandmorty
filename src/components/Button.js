@@ -19,7 +19,7 @@ const Button = (props) => {
   return (
     <motion.button 
     type='button'
-    className={`${props.className} ${props.color}  text-2xl font-bold rounded-md py-2 sm:px-10 border-2 border-white uppercase`}
+    className={`${props.className} ${props.color} ${props.border}  text-2xl font-bold rounded-md py-2 sm:px-10 border-2 border-white uppercase`}
     onClick={props?.onClick}
     whileHover={'animate'}
     variants={width > 1024 && animationButton}

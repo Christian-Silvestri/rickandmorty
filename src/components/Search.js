@@ -51,7 +51,7 @@ const Search = ({ setSearch, setPageNumber }) => {
         className='btn-search font-bold rounded-md py-2 sm:px-10 border-2 border-white'>
         Clear
       </motion.button> */}
-      <Button value='clear' className='w-full' color='bg-rick_blue' onClick={handleClear} />
+      <Button value='clear' className='w-full' border='border-rick_lightGreen' color='' onClick={handleClear} />
     </form>
   )
 }

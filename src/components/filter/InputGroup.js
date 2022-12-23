@@ -7,7 +7,7 @@ const InputGroup = ({ setId, totalEpisode, label }) => {
   }
 
   return (
-    <select name='Episode' onChange={handleEpisode} defaultValue={1} className='w-full md:w-max md:pr-48 md:px-2 py-2'>
+    <select name='Episode' onChange={handleEpisode} defaultValue={1} className='w-full rounded-md md:w-max md:pr-48 md:px-2 py-2'>
       {listEpisode.map((item, index) => {
         return (
           <option key={index} value={item + 1} >

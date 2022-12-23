@@ -60,7 +60,7 @@ const Locations = () => {
         <div className='flex flex-wrap xl:pl-96 px-8'>
           {location?.residents?.length !== 0 ?
             <Card results={resident} /> :
-            <h1 className='h-screen text-4xl pl-60 uppercase'>
+            <h1 className=' xl:text-4xl w-full text-center 2xl:pl-60 uppercase'>
             this location has no residents...</h1>
 }
         </div>

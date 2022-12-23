@@ -13,12 +13,12 @@ const Navbar = () => {
       <div className=' px-4 py-2 lg:py-4 border-b-4 border-rick_blue xl:py-4 flex items-center justify-between  xl:px-8 bg-zinc-800 '>
         <div>
           <div className='font-rickmorty text-4xl text-rick_lightGreen'>
-            <NavLink to={'/'}> Rick and Morty</NavLink>
+            <NavLink to={'/rickandmorty'}> Rick and Morty</NavLink>
           </div>
         </div>
         <div className='font-magra text-2xl '>
           <div className='hidden lg:flex gap-x-12'>
-            <NavLink to={'/'}>Characters</NavLink>
+            <NavLink to={'/rickandmorty'}>Characters</NavLink>
             <NavLink to={'/episode'}>Episode</NavLink>
             <NavLink to={'/location'}>Location</NavLink>
           </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className='lg:hidden  '>
         {isOpen && (
           <div onClick={() => setisOpen(false)} className='flex  flex-col items-center py-4 gap-y-4 bg-zinc-800 text-3xl border-b-2 border-rick_blue'>
-            <NavLink to={'/'}>Characters</NavLink>
+            <NavLink to={'/rickandmorty'}>Characters</NavLink>
             <NavLink to={'/episode'}>Episode</NavLink>
             <NavLink to={'/location'}>Location</NavLink>
           </div>
